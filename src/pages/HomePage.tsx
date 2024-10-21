@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Pagination } from '../components/Pagination';
+import { Artwork } from '../types/ArtInstituteTypes';
+import { Pagination } from '../components/Pagination2';
 import { ArtworkList } from '../components/ArtworkList';
 import { SearchBar } from '../components/SearchBar';
 import { ApiService } from '../services/ApiService';
@@ -8,7 +9,7 @@ import { ApiService } from '../services/ApiService';
 
 
 export const HomePage: React.FC = () => {
-    const [searchResults, setSearchResults]     = useState([]);
+    const [searchResults, setSearchResults]     = useState<[]>([]);
     const [artworksPerPage]                     = useState(1);
     const [currentPage, setCurrentPage]         = useState(1);
 
@@ -30,7 +31,7 @@ export const HomePage: React.FC = () => {
             <h1>Art Institute of Chicago Explorer</h1>
             <SearchBar onSearch={handleSearch}/>
             <ArtworkList artworks={currentArtworks}/>
-            <Pagination totalItems={searchResults.length} itemsPerPage={artworksPerPage} paginate={paginate}/>
+            <Pagination totalPages={searchResults.length} currentPage={currentPage} onPageChange={paginate} items={searchResults}/>
         </div>
     )
 }
