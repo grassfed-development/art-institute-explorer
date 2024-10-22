@@ -1,17 +1,16 @@
 import React, { useState, useContext, createContext, ReactNode } from 'react';
 import { Artwork } from '../types/ArtInstituteTypes';
 
-interface FavoritesContextType {
+interface FavoritesContextTypes {
     favorites: Artwork[],
-    addFavorite: (artwork: Artwork)     => void,
+    addFavorite: (artwork: Artwork) => void,
     removeFavorite: (artworkId: number) => void
 }
-
 interface FavoritesProviderType {
     children: ReactNode
 }
 
-const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
+const FavoritesContext = createContext<FavoritesContextTypes | undefined>(undefined);
 
 export const FavoritesProvider: React.FC<FavoritesProviderType> = ({ children }) => {
     const [favorites, setFavorites] = useState<Artwork[]>([]);
@@ -37,4 +36,4 @@ export const useFavorites = () => {
         throw new Error ('useFavorites must be within FavoritesProvider');
     };
     return context;
-}
+};

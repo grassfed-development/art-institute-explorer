@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface SearchBarProps {
-    onSearch: (query: string) => void;
+    onSearch: (query: string) => void
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
@@ -14,12 +14,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
-            type="{text" 
+            <input
+            type='text'
+            placeholder='Search Artworks'
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder='Search artworks...'/>
-            <button type='submit'>Search</button>
+            onChange={(e) => setQuery(e.target.value)}/>
+            <button type='submit'>Submit</button>
         </form>
-    );
+    )
 };
