@@ -11,7 +11,7 @@ function App() {
           <nav>
             <ul>
               <li><Link to='/'>Home Page</Link></li>
-              <li><Link to='/artworks/27999'>Sample Artwork</Link></li>
+              <li><Link to='/artworks/130236'>Sample Artwork</Link></li>
               <li><Link to='/exhibitions/7500'>Sample Exhibition</Link></li>
               <li><Link to='/artists/5428'>Sample Artist</Link></li>
             </ul>

@@ -21,7 +21,9 @@ export const HomePage: React.FC = () => {
 
     const handleSearch = async (query: string) => {
         const results = await ApiService.searchArtworks(query);
+        console.log(results.data);
         setSearchResults(results.data);
+        setCurrentPage(1);
     };
 
 
