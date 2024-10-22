@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Artwork } from '../types/ArtInstituteTypes';
-import { Pagination } from '../components/Pagination2';
+import { Pagination2 } from '../components/Pagination2';
 import { ArtworkList } from '../components/ArtworkList';
 import { SearchBar } from '../components/SearchBar';
 import { ApiService } from '../services/ApiService';
@@ -31,7 +30,7 @@ export const HomePage: React.FC = () => {
             <h1>Art Institute of Chicago Explorer</h1>
             <SearchBar onSearch={handleSearch}/>
             <ArtworkList artworks={currentArtworks}/>
-            <Pagination totalPages={searchResults.length} currentPage={currentPage} onPageChange={paginate} items={searchResults}/>
+            <Pagination2 totalPages={searchResults.length} currentPage={currentPage} onPageChange={paginate} items={searchResults}/>
         </div>
     )
 }
