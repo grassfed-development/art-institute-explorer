@@ -18,5 +18,13 @@ export interface Exhibition {
 export interface Paginate {
     totalItems: number,
     itemsPerPage: number,
-    paginate: (number: number) => void
+    paginate: (page: number) => void,
+    items: []
+}
+
+export interface Paginate2 {
+    currentPage: number,
+    totalPages: number,
+    paginate: (page: number) => void,
+    items: []
 }

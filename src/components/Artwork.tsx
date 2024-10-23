@@ -5,7 +5,7 @@ interface ArtworkProps {
     artwork: ArtworkType;
 }
 
-export const Artwork: React.FC<ArtworkProps> = ({ artwork }) => {
+export const Artwork: React.FC<ArtworkProps> = React.memo(({ artwork }) => {
     return (
         <div className="artwork">
             <h1><b>{artwork.title}</b></h1>
@@ -14,4 +14,4 @@ export const Artwork: React.FC<ArtworkProps> = ({ artwork }) => {
             alt={artwork.title} />
         </div>
     )
-};
+});

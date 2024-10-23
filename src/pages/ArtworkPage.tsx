@@ -6,7 +6,7 @@ import { ApiService } from '../services/ApiService';
 
 
 
-export const ArtworkPage: React.FC = () => {
+const ArtworkPage: React.FC = () => {
     const [artwork, setArtwork] = useState<ArtworkType | null>();
     const [loading, setLoading] = useState(true);
     const [error, setError]     = useState<string | null>(null);
@@ -32,3 +32,6 @@ export const ArtworkPage: React.FC = () => {
     if (!artwork) return <div>No artworks found</div>;
     return <Artwork artwork={artwork}/>
 }
+
+
+export default ArtworkPage;
