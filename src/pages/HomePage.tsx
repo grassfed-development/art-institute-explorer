@@ -12,7 +12,7 @@ export const HomePage: React.FC = () => {
     const [artworksPerPage]                     = useState(1);
     const [currentPage, setCurrentPage]         = useState(1);
 
-    const paginate = (number: number) => setCurrentPage(number);
+    const paginate = (page: number) => setCurrentPage(page);
     const indexOfLastArtwork  = currentPage * artworksPerPage;
     const indexOfFirstArtwork = indexOfLastArtwork - artworksPerPage;
     const currentArtworks     = searchResults.slice(indexOfFirstArtwork, indexOfLastArtwork);
@@ -32,7 +32,7 @@ export const HomePage: React.FC = () => {
             <h1>Art Institute of Chicago Explorer</h1>
             <SearchBar onSearch={handleSearch}/>
             <ArtworkList artworks={currentArtworks}/>
-            <Pagination2 totalPages={searchResults.length} currentPage={currentPage} onPageChange={paginate} items={searchResults}/>
+            <Pagination2 totalPages={searchResults.length} currentPage={currentPage} paginate={paginate} items={searchResults}/>
         </div>
     )
 }
