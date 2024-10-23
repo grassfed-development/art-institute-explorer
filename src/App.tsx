@@ -1,8 +1,9 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
-import { ArtworkPage } from './pages/ArtworkPage';
-import { ExhibitionPage } from './pages/ExhibitionPage';
-import { ArtistPage } from './pages/ArtistPage';
+const HomePage       = lazy(() => import('./pages/HomePage'));
+const ArtworkPage    = lazy(() => import('./pages/ArtworkPage'));
+const ExhibitionPage = lazy(() => import('./pages/ExhibitionPage'));
+const ArtistPage     = lazy(() => import('./pages/ArtistPage'));
 
 
 function App() {
@@ -15,14 +16,15 @@ function App() {
               <li><Link to='/exhibitions/7500'>Sample Exhibition</Link></li>
               <li><Link to='/artists/5428'>Sample Artist</Link></li>
             </ul>
-          </nav>
-
-          <Routes>
-            <Route path='/'                element={<HomePage />}/>
-            <Route path='/artworks/:id'    element={<ArtworkPage />}/>
-            <Route path='/exhibitions/:id' element={<ExhibitionPage />}/>
-            <Route path='/artists/:id'     element={<ArtistPage />}/>
-          </Routes>
+          </nav> 
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path='/'                element={<HomePage />}/>
+              <Route path='/artworks/:id'    element={<ArtworkPage />}/>
+              <Route path='/exhibitions/:id' element={<ExhibitionPage />}/>
+              <Route path='/artists/:id'     element={<ArtistPage />}/>
+            </Routes>
+          </Suspense >
         </div>
     )
 }

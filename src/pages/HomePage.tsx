@@ -7,7 +7,7 @@ import { ApiService } from '../services/ApiService';
 
 
 
-export const HomePage: React.FC = () => {
+const HomePage: React.FC = () => {
     const [searchResults, setSearchResults]     = useState<[]>([]);
     const [artworksPerPage]                     = useState(1);
     const [currentPage, setCurrentPage]         = useState(1);
@@ -35,4 +35,6 @@ export const HomePage: React.FC = () => {
             <Pagination2 totalPages={searchResults.length} currentPage={currentPage} paginate={paginate} items={searchResults}/>
         </div>
     )
-}
+};
+
+export default HomePage

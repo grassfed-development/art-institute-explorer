@@ -5,7 +5,7 @@ import { Exhibition as ExhibitionType} from '../types/ArtInstituteTypes';
 import { ApiService } from '../services/ApiService';
 
 
-export const ExhibitionPage: React.FC = () => {
+const ExhibitionPage: React.FC = () => {
     const [exhibition, setExhibition] = useState<ExhibitionType | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -32,4 +32,6 @@ export const ExhibitionPage: React.FC = () => {
     if (error)       return <div>Error fetching exhibition</div>;
     if (!exhibition) return <div>No exhibition found</div>;
     return <Exhibition exhibition={exhibition}/>
-}
+};
+
+export default ExhibitionPage;
