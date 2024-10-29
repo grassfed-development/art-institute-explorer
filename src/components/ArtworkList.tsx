@@ -9,7 +9,6 @@ export const ArtworkList: React.FC<ArtworkListProps> = ({ artworks }) => {
 
     return (
         <div>
-            <p>
                 {artworks.map((artwork) => (
                     <>
                         <img src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/200,/0/default.jpg`} 
@@ -18,7 +17,6 @@ export const ArtworkList: React.FC<ArtworkListProps> = ({ artworks }) => {
                         <h3>Artist: {artwork.artist_title}</h3>
                     </>     
             ))}
-            </p>
         </div>
     );
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Pagination2 } from '../components/Pagination2';
-import { ArtworkList } from '../components/ArtworkList';
-import { SearchBar } from '../components/SearchBar';
-import { ApiService } from '../services/ApiService';
+import { Pagination2 }     from '../components/Pagination2';
+import { ArtworkList }     from '../components/ArtworkList';
+import { SearchBar }       from '../components/SearchBar';
+import { ApiService }      from '../services/ApiService';
 
 
 

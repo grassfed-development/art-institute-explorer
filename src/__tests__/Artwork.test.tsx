@@ -1,6 +1,5 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Artwork } from './Artwork';
+import { Artwork } from '../components/Artwork';
 
 
 test('renders artwork details', () => {
@@ -8,7 +7,7 @@ test('renders artwork details', () => {
         id: 1,
         title: 'Test Artwork',
         artist_title: 'Test Artist',
-        image_id: 'Test image ID'
+        image_id: 'test-image-id'
     };
 
     render(<Artwork artwork={mockArtwork} />);
