@@ -7,21 +7,21 @@ import { ApiService }      from '../services/ApiService';
 
 
 
-const HomePage: React.FC = () => {
+export const HomePage: React.FC = () => {
     const [searchResults, setSearchResults]     = useState<[]>([]);
     const [artworksPerPage]                     = useState(1);
     const [currentPage, setCurrentPage]         = useState(1);
 
-    const paginate = (page: number) => setCurrentPage(page);
+    const paginate            = (page: number) => setCurrentPage(page);
     const indexOfLastArtwork  = currentPage * artworksPerPage;
     const indexOfFirstArtwork = indexOfLastArtwork - artworksPerPage;
     const currentArtworks     = searchResults.slice(indexOfFirstArtwork, indexOfLastArtwork);
 
 
 
+
     const handleSearch = async (query: string) => {
         const results = await ApiService.searchArtworks(query);
-        console.log(results.data);
         setSearchResults(results.data);
         setCurrentPage(1);
     };
@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
 
     return (
         <div>
-            <h1>Art Institute of Chicago Explorer</h1>
+            <h1>Chicago Art Institute Explorer</h1>
             <SearchBar onSearch={handleSearch}/>
             <ArtworkList artworks={currentArtworks}/>
             <Pagination2 totalPages={searchResults.length} currentPage={currentPage} paginate={paginate} items={searchResults}/>

@@ -1,0 +1,16 @@
+.navbar-top {
+  list-style-type: none;
+  display: block;
+  gap: 18%;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  background-color: grey;
+  text-decoration: none;
+  color: white;
+}
+.navbar-top a{
+  text-decoration: none;
+  color: white;
+}
+
