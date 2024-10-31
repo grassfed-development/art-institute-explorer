@@ -7,7 +7,7 @@ interface ArtworkListProps {
 }
 
 export const ArtworkList: React.FC<ArtworkListProps> = ({ artworks }) => {
-    const { favorites, setFavorites, addFavorite, removeFavorite } = useFavorites();
+    const { addFavorite } = useFavorites();
     
     return (
             <div>
@@ -18,7 +18,6 @@ export const ArtworkList: React.FC<ArtworkListProps> = ({ artworks }) => {
                         <h2>Title: {artwork.title}</h2><br />
                         <h3>Artist: {artwork.artist_title}</h3>
                         <button onClick={() => addFavorite(artwork)}>💟</button>
-                        <button onClick={() => removeFavorite(artwork.id)}>❌</button>
                     </div>     
                 ))}
             </div>
