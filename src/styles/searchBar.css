@@ -1,0 +1,17 @@
+.searchBar {
+    border: solid;
+    border-radius: 10px;
+    padding: 20px;
+    background-color:burlywood;
+  }
+  .searchBar::placeholder {
+    font-size: 1rem;
+    padding: 0px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .searchBar-submit {
+    padding: 10px;
+    border-radius: 50px;
+  }

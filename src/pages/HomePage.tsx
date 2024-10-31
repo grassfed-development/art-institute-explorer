@@ -28,12 +28,13 @@ export const HomePage: React.FC = () => {
 
 
     return (
-        <div>
-            <h1>Chicago Art Institute Explorer</h1>
-            <SearchBar onSearch={handleSearch}/>
-            <ArtworkList artworks={currentArtworks}/>
-            <Pagination2 totalPages={searchResults.length} currentPage={currentPage} paginate={paginate} items={searchResults}/>
-        </div>
+            <div>
+                <h1 className='header'>Chicago Art Institute Explorer</h1>
+                <SearchBar onSearch={handleSearch}/>
+                <ArtworkList artworks={currentArtworks}/>
+                <Pagination2 totalPages={searchResults.length} currentPage={currentPage} 
+                paginate={paginate} items={searchResults}/>
+            </div>
     )
 };
 

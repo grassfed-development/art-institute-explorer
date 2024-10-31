@@ -1,16 +1,50 @@
 .navbar-top {
   list-style-type: none;
-  display: block;
-  gap: 18%;
-  overflow: hidden;
+  display: flex;
+  gap: space;
   margin: 0px;
-  padding: 0px;
-  background-color: grey;
+  padding: 15px;
+  background-color: darkred;
   text-decoration: none;
   color: white;
+  border: inset;
+  border-width: 5px;
+  justify-content: space-evenly;
 }
+
 .navbar-top a{
   text-decoration: none;
   color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
+.navbar-top a:hover {
+  color: darkgrey;
+}
+
+.navbar-top a:active {
+  color: firebrick;
+}
+
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+.header {
+  font-family: monospace, 'Arial Narrow Bold', sans-serif, sans-serif;
+}
+
+.summary {
+  list-style-type: none;
+  border: solid;
+  display: table;
+  gap: auto;
+  justify-content: space-around;
+}
+
+.summary li {
+  display: block;
+  justify-content: center;
+}
