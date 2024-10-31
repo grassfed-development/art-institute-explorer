@@ -1,13 +1,14 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import { Artwork } from '../types/ArtInstituteTypes';
 
 interface FavoritesContextTypes {
     favorites: Artwork[],
+    setFavorites: (favorites: Artwork[]) => void,
     addFavorite: (artwork: Artwork) => void,
     removeFavorite: (artworkId: number) => void
 }
 interface FavoritesProviderType {
-    children: ReactNode
+    children: React.ReactNode
 }
 
 const FavoritesContext = createContext<FavoritesContextTypes | undefined>(undefined);
@@ -24,7 +25,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderType> = ({ children })
     };
 
     return (
-        <FavoritesContext.Provider value={{favorites, addFavorite, removeFavorite}}>
+        <FavoritesContext.Provider value={{favorites, setFavorites, addFavorite, removeFavorite}}>
             {children}
         </FavoritesContext.Provider>
     );

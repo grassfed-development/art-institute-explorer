@@ -1,9 +1,14 @@
 import { lazy, Suspense } from 'react';
+import { FavoritesProvider } from './context/FavoritesContext';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './styles/App.css';
+
 const HomePage       = lazy(() => import('./pages/HomePage'));
 const ArtworkPage    = lazy(() => import('./pages/ArtworkPage'));
 const ExhibitionPage = lazy(() => import('./pages/ExhibitionPage'));
 const ArtistPage     = lazy(() => import('./pages/ArtistPage'));
+const LearnReactPage = lazy(() => import('./pages/LearnReactPage'));
+const FavoritesPage  = lazy(() => import('./pages/FavoritesPage'));
 
 
 function App() {

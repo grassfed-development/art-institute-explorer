@@ -57,7 +57,7 @@ export const ApiService = {
         },
         searchArtworks: async (query: string) => {
                 try {
-                        const response = await axios.get(`${process.env.REACT_APP_QUERY_URL}q=${query}&fields=title,artist_title, image_id`);
+                        const response = await axios.get(`${process.env.REACT_APP_QUERY_URL}q=${query}&fields=id,title,artist_title,image_id`);
                         return response.data;
         }       catch (error) {
                         console.error(`Error fetching the artworks: ${error}`);
